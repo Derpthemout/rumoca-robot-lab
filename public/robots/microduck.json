@@ -1,0 +1,2068 @@
+{
+  "sites": [
+    {
+      "quaternion": [
+        1.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "link": "trunk_base",
+      "name": "imu",
+      "position": [
+        -0.021,
+        6.64098E-05,
+        -0.0146984
+      ]
+    },
+    {
+      "quaternion": [
+        0.0,
+        0.0,
+        0.707107,
+        0.707107
+      ],
+      "link": "ankle_left",
+      "name": "left_foot",
+      "position": [
+        -0.0,
+        -0.0238146,
+        -0.0140852
+      ]
+    },
+    {
+      "quaternion": [
+        0.707107,
+        0.0,
+        0.707107,
+        -0.0
+      ],
+      "link": "jaw_soft",
+      "name": "head_camera",
+      "position": [
+        0.0155,
+        -9.13778E-05,
+        -0.0733
+      ]
+    },
+    {
+      "quaternion": [
+        0.707107,
+        0.0,
+        0.707107,
+        -0.0
+      ],
+      "link": "jaw_soft",
+      "name": "tof",
+      "position": [
+        0.0135,
+        0.0224086,
+        -0.0733
+      ]
+    },
+    {
+      "quaternion": [
+        1.0,
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "link": "jaw_soft",
+      "name": "head_imu",
+      "position": [
+        0.0152323,
+        0.000111069,
+        -0.05106
+      ]
+    },
+    {
+      "quaternion": [
+        0.704015,
+        0.0,
+        0.710185,
+        -0.0
+      ],
+      "link": "jaw_soft",
+      "name": "mouth_tip",
+      "position": [
+        -0.00809334,
+        -0.0,
+        -0.0777383
+      ]
+    },
+    {
+      "quaternion": [
+        0.707107,
+        -0.707107,
+        0.0,
+        0.0
+      ],
+      "link": "ankle_right",
+      "name": "right_foot",
+      "position": [
+        0.0,
+        -0.0238146,
+        -0.0140852
+      ]
+    }
+  ],
+  "links": [
+    {
+      "quaternion": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": null,
+      "name": "trunk_base",
+      "position": [
+        0.0,
+        0.0,
+        0.12
+      ]
+    },
+    {
+      "quaternion": [
+        0.0,
+        -0.707107,
+        -0.707107,
+        -0.0
+      ],
+      "joint": "left_hip_yaw",
+      "parent": "trunk_base",
+      "name": "yaw2roll",
+      "position": [
+        0.006,
+        0.0175,
+        -0.005
+      ]
+    },
+    {
+      "quaternion": [
+        0.707107,
+        -0.707107,
+        -0.0,
+        -0.0
+      ],
+      "joint": "left_hip_roll",
+      "parent": "yaw2roll",
+      "name": "hip_l",
+      "position": [
+        0.0,
+        0.0165,
+        0.0125
+      ]
+    },
+    {
+      "quaternion": [
+        0.5,
+        -0.5,
+        0.5,
+        -0.5
+      ],
+      "joint": "left_hip_pitch",
+      "parent": "hip_l",
+      "name": "upper_leg_left",
+      "position": [
+        0.025,
+        0.0,
+        -0.0185
+      ]
+    },
+    {
+      "quaternion": [
+        0.0,
+        0.707107,
+        0.707107,
+        0.0
+      ],
+      "joint": "left_knee",
+      "parent": "upper_leg_left",
+      "name": "leg",
+      "position": [
+        0.022,
+        0.0357771,
+        -0.004
+      ]
+    },
+    {
+      "quaternion": [
+        0.0,
+        1.0,
+        -0.0,
+        0.0
+      ],
+      "joint": "left_ankle",
+      "parent": "leg",
+      "name": "ankle_left",
+      "position": [
+        0.0,
+        0.042,
+        -0.026
+      ]
+    },
+    {
+      "quaternion": [
+        0.0,
+        0.0,
+        0.707107,
+        -0.707107
+      ],
+      "joint": "neck_pitch",
+      "parent": "trunk_base",
+      "name": "neck",
+      "position": [
+        0.026,
+        0.0145,
+        0.0324215
+      ]
+    },
+    {
+      "quaternion": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "joint": "head_pitch",
+      "parent": "neck",
+      "name": "neck_pitch",
+      "position": [
+        0.0,
+        -0.05,
+        -0.0
+      ]
+    },
+    {
+      "quaternion": [
+        0.0,
+        0.0,
+        -0.707107,
+        -0.707107
+      ],
+      "joint": "head_yaw",
+      "parent": "neck_pitch",
+      "name": "yaw_roll_motion",
+      "position": [
+        -0.0,
+        0.0186931,
+        -0.0145
+      ]
+    },
+    {
+      "quaternion": [
+        0.707107,
+        -0.0,
+        -0.707107,
+        -0.0
+      ],
+      "joint": "head_roll",
+      "parent": "yaw_roll_motion",
+      "name": "jaw_soft",
+      "position": [
+        -0.0179,
+        0.0,
+        0.0145
+      ]
+    },
+    {
+      "quaternion": [
+        0.0,
+        0.707107,
+        0.707107,
+        0.0
+      ],
+      "joint": "right_hip_yaw",
+      "parent": "trunk_base",
+      "name": "bearing_roll",
+      "position": [
+        0.006,
+        -0.0175,
+        -0.005
+      ]
+    },
+    {
+      "quaternion": [
+        0.0,
+        -0.0,
+        0.707107,
+        0.707107
+      ],
+      "joint": "right_hip_roll",
+      "parent": "bearing_roll",
+      "name": "hip_l_2",
+      "position": [
+        -0.0,
+        0.0165,
+        0.0125
+      ]
+    },
+    {
+      "quaternion": [
+        0.5,
+        -0.5,
+        0.5,
+        -0.5
+      ],
+      "joint": "right_hip_pitch",
+      "parent": "hip_l_2",
+      "name": "upper_leg_right",
+      "position": [
+        0.025,
+        0.0,
+        -0.0185
+      ]
+    },
+    {
+      "quaternion": [
+        0.0,
+        1.0,
+        -0.0,
+        -0.0
+      ],
+      "joint": "right_knee",
+      "parent": "upper_leg_right",
+      "name": "leg_2",
+      "position": [
+        -0.022,
+        0.0357771,
+        -0.004
+      ]
+    },
+    {
+      "quaternion": [
+        0.0,
+        -0.707107,
+        -0.707107,
+        0.0
+      ],
+      "joint": "right_ankle",
+      "parent": "leg_2",
+      "name": "ankle_right",
+      "position": [
+        -0.042,
+        0.0,
+        -0.026
+      ]
+    }
+  ],
+  "source": "https://github.com/pollen-robotics/microduck_rl/blob/main/src/mjlab_microduck/robot/microduck/robot_walk.xml",
+  "license": "Apache-2.0",
+  "name": "Microduck",
+  "sourceSha256": "07af5e482200dfd2a7bf80ddde371153c88768a3a5aebc2f58ea42136fc7dadb",
+  "joints": [
+    {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "left_hip_yaw",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "limits": [
+        -0.4363323129985824,
+        0.5235987755982988
+      ]
+    },
+    {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "left_hip_roll",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "limits": [
+        -0.3839724354387525,
+        0.3839724354387525
+      ]
+    },
+    {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "left_hip_pitch",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "limits": [
+        -1.570796326795005,
+        1.5707963267947882
+      ]
+    },
+    {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "left_knee",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "limits": [
+        -1.570796326795012,
+        1.570796326794781
+      ]
+    },
+    {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "left_ankle",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "limits": [
+        -1.5707963267949019,
+        1.5707963267948912
+      ]
+    },
+    {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "neck_pitch",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "limits": [
+        -1.5707963267948966,
+        1.0471975511965976
+      ]
+    },
+    {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "head_pitch",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "limits": [
+        -1.5707963267948974,
+        1.5707963267948957
+      ]
+    },
+    {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "head_yaw",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "limits": [
+        -2.967059728390373,
+        2.967059728390348
+      ]
+    },
+    {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "head_roll",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "limits": [
+        -0.43633231299859127,
+        0.4363323129985735
+      ]
+    },
+    {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "right_hip_yaw",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "limits": [
+        -0.5235987755982988,
+        0.4363323129985824
+      ]
+    },
+    {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "right_hip_roll",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "limits": [
+        -0.3839724354387525,
+        0.3839724354387525
+      ]
+    },
+    {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "right_hip_pitch",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "limits": [
+        -1.5707963267949268,
+        1.5707963267948664
+      ]
+    },
+    {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "right_knee",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "limits": [
+        -1.570796326794932,
+        1.570796326794861
+      ]
+    },
+    {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "right_ankle",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "limits": [
+        -1.5707963267949054,
+        1.5707963267948877
+      ]
+    }
+  ],
+  "version": 1,
+  "description": "Published Microduck geometry and joint limits, evaluated by Rumoca. Fixed base; no ground-contact or walking dynamics yet.",
+  "visuals": [
+    {
+      "rgba": [
+        0.713725,
+        0.760784,
+        0.8,
+        1.0
+      ],
+      "mesh": "seeed_bearing__configuration__22x16x4.stl",
+      "link": "trunk_base",
+      "quaternion": [
+        1.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "position": [
+        0.006,
+        0.0175,
+        -0.005
+      ]
+    },
+    {
+      "rgba": [
+        0.8,
+        0.8,
+        0.8,
+        1.0
+      ],
+      "mesh": "right_shell.stl",
+      "link": "trunk_base",
+      "quaternion": [
+        0.707107,
+        -0.0,
+        -0.0,
+        0.707107
+      ],
+      "position": [
+        0.004,
+        -0.0005,
+        -0.0175
+      ]
+    },
+    {
+      "rgba": [
+        0.647059,
+        0.647059,
+        0.647059,
+        1.0
+      ],
+      "mesh": "banana_pcb_locker.stl",
+      "link": "trunk_base",
+      "quaternion": [
+        0.707107,
+        -0.0,
+        0.0,
+        0.707107
+      ],
+      "position": [
+        0.0042,
+        -0.0,
+        -0.0175215
+      ]
+    },
+    {
+      "rgba": [
+        0.34902,
+        0.376471,
+        0.4,
+        1.0
+      ],
+      "mesh": "trunk_base.stl",
+      "link": "trunk_base",
+      "quaternion": [
+        0.707107,
+        -0.0,
+        -0.0,
+        0.707107
+      ],
+      "position": [
+        0.004,
+        -0.0,
+        -0.0175
+      ]
+    },
+    {
+      "rgba": [
+        0.286275,
+        0.286275,
+        0.286275,
+        1.0
+      ],
+      "mesh": "xl330.stl",
+      "link": "trunk_base",
+      "quaternion": [
+        0.0,
+        0.707107,
+        -0.0,
+        0.707107
+      ],
+      "position": [
+        0.006,
+        0.0175,
+        0.0115
+      ]
+    },
+    {
+      "rgba": [
+        0.901961,
+        0.901961,
+        0.901961,
+        1.0
+      ],
+      "mesh": "power_support.stl",
+      "link": "trunk_base",
+      "quaternion": [
+        0.707107,
+        -0.0,
+        0.0,
+        0.707107
+      ],
+      "position": [
+        0.004,
+        -0.0,
+        -0.0175215
+      ]
+    },
+    {
+      "rgba": [
+        0.901961,
+        0.901961,
+        0.901961,
+        1.0
+      ],
+      "mesh": "np_f970.stl",
+      "link": "trunk_base",
+      "quaternion": [
+        0.00617059,
+        0.70708,
+        -0.70708,
+        -0.00617059
+      ],
+      "position": [
+        -0.0359693,
+        0.0,
+        -0.00385049
+      ]
+    },
+    {
+      "rgba": [
+        0.286275,
+        0.286275,
+        0.286275,
+        1.0
+      ],
+      "mesh": "xl330.stl",
+      "link": "trunk_base",
+      "quaternion": [
+        0.0,
+        0.707107,
+        -0.0,
+        0.707107
+      ],
+      "position": [
+        0.006,
+        -0.0175,
+        0.0115
+      ]
+    },
+    {
+      "rgba": [
+        0.8,
+        0.8,
+        0.8,
+        1.0
+      ],
+      "mesh": "left_shell.stl",
+      "link": "trunk_base",
+      "quaternion": [
+        0.707107,
+        0.0,
+        -0.0,
+        0.707107
+      ],
+      "position": [
+        0.004,
+        -0.0,
+        -0.0175785
+      ]
+    },
+    {
+      "rgba": [
+        0.713725,
+        0.760784,
+        0.8,
+        1.0
+      ],
+      "mesh": "seeed_bearing__configuration__22x16x4.stl",
+      "link": "trunk_base",
+      "quaternion": [
+        1.0,
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "position": [
+        0.006,
+        -0.0175,
+        -0.005
+      ]
+    },
+    {
+      "rgba": [
+        0.647059,
+        0.647059,
+        0.647059,
+        1.0
+      ],
+      "mesh": "yaw2roll.stl",
+      "link": "yaw2roll",
+      "quaternion": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "position": [
+        -0.0175,
+        -0.002,
+        0.0125
+      ]
+    },
+    {
+      "rgba": [
+        0.286275,
+        0.286275,
+        0.286275,
+        1.0
+      ],
+      "mesh": "xl330.stl",
+      "link": "yaw2roll",
+      "quaternion": [
+        0.0,
+        -0.707107,
+        0.707107,
+        -0.0
+      ],
+      "position": [
+        -0.0,
+        0.0,
+        0.0125
+      ]
+    },
+    {
+      "rgba": [
+        0.713725,
+        0.760784,
+        0.8,
+        1.0
+      ],
+      "mesh": "seeed_bearing__configuration__22x16x4.stl",
+      "link": "yaw2roll",
+      "quaternion": [
+        0.5,
+        0.5,
+        0.5,
+        -0.5
+      ],
+      "position": [
+        -0.0,
+        0.0165,
+        0.0125
+      ]
+    },
+    {
+      "rgba": [
+        0.262745,
+        0.282353,
+        0.301961,
+        1.0
+      ],
+      "mesh": "bearing_roll.stl",
+      "link": "yaw2roll",
+      "quaternion": [
+        0.0,
+        -1.0,
+        -0.0,
+        -0.0
+      ],
+      "position": [
+        -0.0175,
+        -0.002,
+        0.0125
+      ]
+    },
+    {
+      "rgba": [
+        0.713725,
+        0.760784,
+        0.8,
+        1.0
+      ],
+      "mesh": "seeed_bearing__configuration__22x16x4.stl",
+      "link": "hip_l",
+      "quaternion": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "position": [
+        0.021,
+        0.0,
+        -0.0185
+      ]
+    },
+    {
+      "rgba": [
+        0.901961,
+        0.901961,
+        0.901961,
+        1.0
+      ],
+      "mesh": "hip_l.stl",
+      "link": "hip_l",
+      "quaternion": [
+        0.707107,
+        -0.707107,
+        0.0,
+        -0.0
+      ],
+      "position": [
+        -0.0175,
+        0.0,
+        -0.0185
+      ]
+    },
+    {
+      "rgba": [
+        0.866667,
+        0.866667,
+        0.866667,
+        1.0
+      ],
+      "mesh": "upper_leg_left.stl",
+      "link": "upper_leg_left",
+      "quaternion": [
+        0.5,
+        -0.5,
+        -0.5,
+        -0.5
+      ],
+      "position": [
+        -0.0,
+        -0.0,
+        -0.0425
+      ]
+    },
+    {
+      "rgba": [
+        0.286275,
+        0.286275,
+        0.286275,
+        1.0
+      ],
+      "mesh": "xl330.stl",
+      "link": "upper_leg_left",
+      "quaternion": [
+        0.0,
+        -0.707107,
+        -0.0,
+        -0.707107
+      ],
+      "position": [
+        0.022,
+        0.0357771,
+        0.0125
+      ]
+    },
+    {
+      "rgba": [
+        0.537255,
+        0.854902,
+        0.827451,
+        1.0
+      ],
+      "mesh": "upper_leg_rigidity_plate.stl",
+      "link": "upper_leg_left",
+      "quaternion": [
+        0.5,
+        -0.5,
+        -0.5,
+        -0.5
+      ],
+      "position": [
+        0.0,
+        -0.0,
+        -0.0425
+      ]
+    },
+    {
+      "rgba": [
+        0.713725,
+        0.760784,
+        0.8,
+        1.0
+      ],
+      "mesh": "seeed_bearing__configuration__22x16x4.stl",
+      "link": "upper_leg_left",
+      "quaternion": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "position": [
+        0.022,
+        0.0357771,
+        -0.004
+      ]
+    },
+    {
+      "rgba": [
+        0.286275,
+        0.286275,
+        0.286275,
+        1.0
+      ],
+      "mesh": "xl330.stl",
+      "link": "upper_leg_left",
+      "quaternion": [
+        0.5,
+        0.5,
+        -0.5,
+        0.5
+      ],
+      "position": [
+        -0.0,
+        -0.0,
+        0.0125
+      ]
+    },
+    {
+      "rgba": [
+        0.811765,
+        0.858824,
+        0.898039,
+        1.0
+      ],
+      "mesh": "leg.stl",
+      "link": "leg",
+      "quaternion": [
+        0.5,
+        0.5,
+        0.5,
+        -0.5
+      ],
+      "position": [
+        -0.022,
+        0.0357771,
+        0.0385
+      ]
+    },
+    {
+      "rgba": [
+        0.286275,
+        0.286275,
+        0.286275,
+        1.0
+      ],
+      "mesh": "xl330.stl",
+      "link": "leg",
+      "quaternion": [
+        0.5,
+        -0.5,
+        -0.5,
+        -0.5
+      ],
+      "position": [
+        0.0,
+        0.042,
+        -0.0115
+      ]
+    },
+    {
+      "rgba": [
+        0.537255,
+        0.854902,
+        0.827451,
+        1.0
+      ],
+      "mesh": "sole_left.stl",
+      "link": "ankle_left",
+      "quaternion": [
+        0.5,
+        -0.5,
+        -0.5,
+        -0.5
+      ],
+      "position": [
+        -0.022,
+        0.00622291,
+        -0.0647
+      ]
+    },
+    {
+      "rgba": [
+        0.980392,
+        0.713725,
+        0.00392157,
+        1.0
+      ],
+      "mesh": "foot_left.stl",
+      "link": "ankle_left",
+      "quaternion": [
+        0.5,
+        -0.5,
+        -0.5,
+        -0.5
+      ],
+      "position": [
+        -0.022,
+        0.00622291,
+        -0.0647
+      ]
+    },
+    {
+      "rgba": [
+        0.713725,
+        0.760784,
+        0.8,
+        1.0
+      ],
+      "mesh": "seeed_bearing__configuration_default.stl",
+      "link": "ankle_left",
+      "quaternion": [
+        0.0,
+        0.0,
+        -0.0,
+        1.0
+      ],
+      "position": [
+        0.0,
+        0.0,
+        -0.0322
+      ]
+    },
+    {
+      "rgba": [
+        0.980392,
+        0.713725,
+        0.00392157,
+        1.0
+      ],
+      "mesh": "ankle_left.stl",
+      "link": "ankle_left",
+      "quaternion": [
+        0.5,
+        -0.5,
+        -0.5,
+        -0.5
+      ],
+      "position": [
+        -0.022,
+        0.00622291,
+        -0.0647
+      ]
+    },
+    {
+      "rgba": [
+        0.8,
+        0.8,
+        0.8,
+        1.0
+      ],
+      "mesh": "neck.stl",
+      "link": "neck",
+      "quaternion": [
+        0.5,
+        0.5,
+        0.5,
+        -0.5
+      ],
+      "position": [
+        0.022,
+        0.05,
+        0.028
+      ]
+    },
+    {
+      "rgba": [
+        0.286275,
+        0.286275,
+        0.286275,
+        1.0
+      ],
+      "mesh": "xl330.stl",
+      "link": "neck",
+      "quaternion": [
+        0.5,
+        -0.5,
+        -0.5,
+        -0.5
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0145
+      ]
+    },
+    {
+      "rgba": [
+        0.286275,
+        0.286275,
+        0.286275,
+        1.0
+      ],
+      "mesh": "xl330.stl",
+      "link": "neck",
+      "quaternion": [
+        0.5,
+        0.5,
+        -0.5,
+        0.5
+      ],
+      "position": [
+        0.0,
+        -0.05,
+        0.0145
+      ]
+    },
+    {
+      "rgba": [
+        0.8,
+        0.8,
+        0.8,
+        1.0
+      ],
+      "mesh": "neck.stl",
+      "link": "neck",
+      "quaternion": [
+        0.5,
+        0.5,
+        0.5,
+        -0.5
+      ],
+      "position": [
+        0.022,
+        0.05,
+        0.003
+      ]
+    },
+    {
+      "rgba": [
+        0.34902,
+        0.376471,
+        0.4,
+        1.0
+      ],
+      "mesh": "neck_pitch.stl",
+      "link": "neck_pitch",
+      "quaternion": [
+        0.5,
+        -0.5,
+        -0.5,
+        -0.5
+      ],
+      "position": [
+        -0.0,
+        0.0287931,
+        -0.0145
+      ]
+    },
+    {
+      "rgba": [
+        0.713725,
+        0.760784,
+        0.8,
+        1.0
+      ],
+      "mesh": "seeed_bearing__configuration__22x16x4.stl",
+      "link": "neck_pitch",
+      "quaternion": [
+        0.707107,
+        0.707107,
+        0.0,
+        0.0
+      ],
+      "position": [
+        -0.0,
+        0.0207931,
+        -0.0145
+      ]
+    },
+    {
+      "rgba": [
+        0.768627,
+        0.886275,
+        0.952941,
+        1.0
+      ],
+      "mesh": "yaw_roll_motion.stl",
+      "link": "yaw_roll_motion",
+      "quaternion": [
+        0.707107,
+        0.0,
+        -0.0,
+        0.707107
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.01
+      ]
+    },
+    {
+      "rgba": [
+        0.286275,
+        0.286275,
+        0.286275,
+        1.0
+      ],
+      "mesh": "xl330.stl",
+      "link": "yaw_roll_motion",
+      "quaternion": [
+        0.5,
+        -0.5,
+        -0.5,
+        -0.5
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0145
+      ]
+    },
+    {
+      "rgba": [
+        0.713725,
+        0.760784,
+        0.8,
+        1.0
+      ],
+      "mesh": "seeed_bearing__configuration__22x16x4.stl",
+      "link": "yaw_roll_motion",
+      "quaternion": [
+        0.707107,
+        -0.0,
+        -0.707107,
+        -0.0
+      ],
+      "position": [
+        -0.016,
+        0.0,
+        0.0145
+      ]
+    },
+    {
+      "rgba": [
+        0.713725,
+        0.760784,
+        0.8,
+        1.0
+      ],
+      "mesh": "seeed_bearing__configuration__22x16x4.stl",
+      "link": "yaw_roll_motion",
+      "quaternion": [
+        0.707107,
+        -0.0,
+        -0.707107,
+        -0.0
+      ],
+      "position": [
+        0.018,
+        0.0,
+        0.0145
+      ]
+    },
+    {
+      "rgba": [
+        0.262745,
+        0.282353,
+        0.301961,
+        1.0
+      ],
+      "mesh": "lens.stl",
+      "link": "jaw_soft",
+      "quaternion": [
+        0.5,
+        -0.5,
+        0.5,
+        -0.5
+      ],
+      "position": [
+        0.0155,
+        -9.13778E-05,
+        -0.05548
+      ]
+    },
+    {
+      "rgba": [
+        0.34902,
+        0.376471,
+        0.4,
+        1.0
+      ],
+      "mesh": "face_part.stl",
+      "link": "jaw_soft",
+      "quaternion": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "position": [
+        -0.0045,
+        -9.13778E-05,
+        -0.0178
+      ]
+    },
+    {
+      "rgba": [
+        0.286275,
+        0.286275,
+        0.286275,
+        1.0
+      ],
+      "mesh": "xl330.stl",
+      "link": "jaw_soft",
+      "quaternion": [
+        0.707107,
+        0.0,
+        -0.0,
+        -0.707107
+      ],
+      "position": [
+        0.003,
+        0.0255,
+        -0.018
+      ]
+    },
+    {
+      "rgba": [
+        0.85098,
+        0.756863,
+        0.866667,
+        1.0
+      ],
+      "mesh": "jaw_soft.stl",
+      "link": "jaw_soft",
+      "quaternion": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "position": [
+        -0.0046,
+        0.0,
+        -0.0179996
+      ]
+    },
+    {
+      "rgba": [
+        0.262745,
+        0.282353,
+        0.301961,
+        1.0
+      ],
+      "mesh": "motor_support.stl",
+      "link": "jaw_soft",
+      "quaternion": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "position": [
+        -0.0045,
+        0.0,
+        -0.018
+      ]
+    },
+    {
+      "rgba": [
+        0.901961,
+        0.901961,
+        0.901961,
+        1.0
+      ],
+      "mesh": "top_head_shell.stl",
+      "link": "jaw_soft",
+      "quaternion": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "position": [
+        -0.0045,
+        -0.0,
+        -0.018
+      ]
+    },
+    {
+      "rgba": [
+        0.286275,
+        0.286275,
+        0.286275,
+        1.0
+      ],
+      "mesh": "xl330.stl",
+      "link": "jaw_soft",
+      "quaternion": [
+        0.5,
+        -0.5,
+        -0.5,
+        -0.5
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0145
+      ]
+    },
+    {
+      "rgba": [
+        0.713725,
+        0.760784,
+        0.8,
+        1.0
+      ],
+      "mesh": "seeed_bearing__configuration_default.stl",
+      "link": "jaw_soft",
+      "quaternion": [
+        0.5,
+        -0.5,
+        0.5,
+        0.5
+      ],
+      "position": [
+        0.0032,
+        -0.04,
+        -0.018
+      ]
+    },
+    {
+      "rgba": [
+        0.313725,
+        0.486275,
+        0.411765,
+        1.0
+      ],
+      "mesh": "elec_rpi_robot_hat_pcb.stl",
+      "link": "jaw_soft",
+      "quaternion": [
+        0.707107,
+        0.0,
+        0.0,
+        -0.707107
+      ],
+      "position": [
+        0.02694,
+        0.0289936,
+        -0.0519
+      ]
+    },
+    {
+      "rgba": [
+        0.85098,
+        0.756863,
+        0.866667,
+        1.0
+      ],
+      "mesh": "soft_mouth_top.stl",
+      "link": "jaw_soft",
+      "quaternion": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "position": [
+        -0.00420071,
+        1.7776E-08,
+        -0.0180814
+      ]
+    },
+    {
+      "rgba": [
+        0.262745,
+        0.282353,
+        0.301961,
+        1.0
+      ],
+      "mesh": "noenoeil.stl",
+      "link": "jaw_soft",
+      "quaternion": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "position": [
+        -0.0045,
+        -9.13778E-05,
+        -0.0178
+      ]
+    },
+    {
+      "rgba": [
+        0.980392,
+        0.713725,
+        0.00392157,
+        1.0
+      ],
+      "mesh": "jaw.stl",
+      "link": "jaw_soft",
+      "quaternion": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "position": [
+        -0.0045,
+        0.0,
+        -0.018
+      ]
+    },
+    {
+      "rgba": [
+        0.980392,
+        0.713725,
+        0.00392157,
+        1.0
+      ],
+      "mesh": "bottom_head_shell.stl",
+      "link": "jaw_soft",
+      "quaternion": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "position": [
+        -0.0043,
+        -0.0,
+        -0.018
+      ]
+    },
+    {
+      "rgba": [
+        0.262745,
+        0.282353,
+        0.301961,
+        1.0
+      ],
+      "mesh": "m12_lens_holder.stl",
+      "link": "jaw_soft",
+      "quaternion": [
+        0.5,
+        -0.5,
+        0.5,
+        -0.5
+      ],
+      "position": [
+        0.0155,
+        -9.13778E-05,
+        -0.05558
+      ]
+    },
+    {
+      "rgba": [
+        0.498039,
+        0.498039,
+        0.498039,
+        1.0
+      ],
+      "mesh": "pcb__raspberry_pi_zero_2_w.stl",
+      "link": "jaw_soft",
+      "quaternion": [
+        0.5,
+        -0.5,
+        -0.5,
+        0.5
+      ],
+      "position": [
+        0.015435,
+        -1.13778E-05,
+        -0.06001
+      ]
+    },
+    {
+      "rgba": [
+        0.294118,
+        0.290196,
+        0.290196,
+        1.0
+      ],
+      "mesh": "speaker.stl",
+      "link": "jaw_soft",
+      "quaternion": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "position": [
+        0.01,
+        -0.016786,
+        0.0260226
+      ]
+    },
+    {
+      "rgba": [
+        0.647059,
+        0.647059,
+        0.647059,
+        1.0
+      ],
+      "mesh": "yaw2roll.stl",
+      "link": "bearing_roll",
+      "quaternion": [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "position": [
+        -0.0175,
+        -0.002,
+        0.0125
+      ]
+    },
+    {
+      "rgba": [
+        0.286275,
+        0.286275,
+        0.286275,
+        1.0
+      ],
+      "mesh": "xl330.stl",
+      "link": "bearing_roll",
+      "quaternion": [
+        0.0,
+        -0.707107,
+        0.707107,
+        -0.0
+      ],
+      "position": [
+        -0.0,
+        0.0,
+        0.0125
+      ]
+    },
+    {
+      "rgba": [
+        0.262745,
+        0.282353,
+        0.301961,
+        1.0
+      ],
+      "mesh": "bearing_roll.stl",
+      "link": "bearing_roll",
+      "quaternion": [
+        0.0,
+        -1.0,
+        -0.0,
+        -0.0
+      ],
+      "position": [
+        -0.0175,
+        -0.002,
+        0.0125
+      ]
+    },
+    {
+      "rgba": [
+        0.713725,
+        0.760784,
+        0.8,
+        1.0
+      ],
+      "mesh": "seeed_bearing__configuration__22x16x4.stl",
+      "link": "bearing_roll",
+      "quaternion": [
+        0.5,
+        0.5,
+        0.5,
+        -0.5
+      ],
+      "position": [
+        -0.0,
+        0.0165,
+        0.0125
+      ]
+    },
+    {
+      "rgba": [
+        0.901961,
+        0.901961,
+        0.901961,
+        1.0
+      ],
+      "mesh": "hip_l.stl",
+      "link": "hip_l_2",
+      "quaternion": [
+        0.707107,
+        -0.707107,
+        -0.0,
+        -0.0
+      ],
+      "position": [
+        -0.0175,
+        0.0,
+        -0.0185
+      ]
+    },
+    {
+      "rgba": [
+        0.713725,
+        0.760784,
+        0.8,
+        1.0
+      ],
+      "mesh": "seeed_bearing__configuration__22x16x4.stl",
+      "link": "hip_l_2",
+      "quaternion": [
+        0.5,
+        0.5,
+        -0.5,
+        -0.5
+      ],
+      "position": [
+        0.025,
+        0.0,
+        -0.0185
+      ]
+    },
+    {
+      "rgba": [
+        0.286275,
+        0.286275,
+        0.286275,
+        1.0
+      ],
+      "mesh": "xl330.stl",
+      "link": "upper_leg_right",
+      "quaternion": [
+        0.707107,
+        -0.0,
+        -0.707107,
+        -0.0
+      ],
+      "position": [
+        -0.022,
+        0.0357771,
+        0.0125
+      ]
+    },
+    {
+      "rgba": [
+        0.713725,
+        0.760784,
+        0.8,
+        1.0
+      ],
+      "mesh": "seeed_bearing__configuration__22x16x4.stl",
+      "link": "upper_leg_right",
+      "quaternion": [
+        0.0,
+        1.0,
+        -0.0,
+        -0.0
+      ],
+      "position": [
+        -0.022,
+        0.0357771,
+        0.0
+      ]
+    },
+    {
+      "rgba": [
+        0.537255,
+        0.854902,
+        0.827451,
+        1.0
+      ],
+      "mesh": "upper_leg_rigidity_plate.stl",
+      "link": "upper_leg_right",
+      "quaternion": [
+        0.5,
+        -0.5,
+        0.5,
+        0.5
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0435
+      ]
+    },
+    {
+      "rgba": [
+        0.866667,
+        0.866667,
+        0.866667,
+        1.0
+      ],
+      "mesh": "upper_leg_right.stl",
+      "link": "upper_leg_right",
+      "quaternion": [
+        0.5,
+        -0.5,
+        0.5,
+        0.5
+      ],
+      "position": [
+        -0.0,
+        0.0,
+        -0.0425
+      ]
+    },
+    {
+      "rgba": [
+        0.286275,
+        0.286275,
+        0.286275,
+        1.0
+      ],
+      "mesh": "xl330.stl",
+      "link": "upper_leg_right",
+      "quaternion": [
+        0.5,
+        0.5,
+        -0.5,
+        0.5
+      ],
+      "position": [
+        0.0,
+        0.0,
+        0.0125
+      ]
+    },
+    {
+      "rgba": [
+        0.286275,
+        0.286275,
+        0.286275,
+        1.0
+      ],
+      "mesh": "xl330.stl",
+      "link": "leg_2",
+      "quaternion": [
+        0.707107,
+        -0.0,
+        -0.707107,
+        -0.0
+      ],
+      "position": [
+        -0.042,
+        0.0,
+        -0.0115
+      ]
+    },
+    {
+      "rgba": [
+        0.811765,
+        0.858824,
+        0.898039,
+        1.0
+      ],
+      "mesh": "leg.stl",
+      "link": "leg_2",
+      "quaternion": [
+        0.707107,
+        0.0,
+        0.707107,
+        -0.0
+      ],
+      "position": [
+        -0.0357771,
+        -0.022,
+        0.0385
+      ]
+    },
+    {
+      "rgba": [
+        0.980392,
+        0.713725,
+        0.00392157,
+        1.0
+      ],
+      "mesh": "ankle_right.stl",
+      "link": "ankle_right",
+      "quaternion": [
+        0.5,
+        -0.5,
+        0.5,
+        0.5
+      ],
+      "position": [
+        0.022,
+        0.00622291,
+        -0.0647
+      ]
+    },
+    {
+      "rgba": [
+        0.537255,
+        0.854902,
+        0.827451,
+        1.0
+      ],
+      "mesh": "sole_right.stl",
+      "link": "ankle_right",
+      "quaternion": [
+        0.5,
+        -0.5,
+        0.5,
+        0.5
+      ],
+      "position": [
+        0.022,
+        0.00622291,
+        -0.0647
+      ]
+    },
+    {
+      "rgba": [
+        0.713725,
+        0.760784,
+        0.8,
+        1.0
+      ],
+      "mesh": "seeed_bearing__configuration_default.stl",
+      "link": "ankle_right",
+      "quaternion": [
+        0.0,
+        1.0,
+        -0.0,
+        -0.0
+      ],
+      "position": [
+        -0.0,
+        0.0,
+        -0.0292
+      ]
+    },
+    {
+      "rgba": [
+        0.980392,
+        0.713725,
+        0.00392157,
+        1.0
+      ],
+      "mesh": "foot_right.stl",
+      "link": "ankle_right",
+      "quaternion": [
+        0.5,
+        -0.5,
+        0.5,
+        0.5
+      ],
+      "position": [
+        0.022,
+        0.00622291,
+        -0.0647
+      ]
+    }
+  ]
+}

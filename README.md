@@ -157,3 +157,6 @@ the supported demo's CI checks pass on `main`.
 Copyright 2026 Cognipilot. Licensed under [Apache 2.0](LICENSE); see [NOTICE](NOTICE).
 Third-party models, textures, and dependencies retain their own licenses and
 [asset credits](public/models/licenses/ACTORS.md).
+## Robot Lab
+
+The articulated-robot entry point is `robot.html`, linked from the main header. It includes a Microduck model with Rumoca-evaluated kinematics, bounded position IK, and configurable ideal depth/LiDAR mounts. See [ROBOT-LAB.md](ROBOT-LAB.md) for running it and its current fidelity limits.

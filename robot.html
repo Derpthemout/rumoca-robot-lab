@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rumoca Robot Lab</title></head>
+<body><div id="robot-app">
+<header><a href="./">← SLAM Lab</a><h1>Rumoca <span>Robot Lab</span></h1><div id="engine">Loading compiler…</div></header>
+<aside>
+<p class="eyebrow">ARTICULATED ROBOTS / MOTION LAB</p><h2 id="name">Microduck</h2><p id="description"></p>
+<div class="row"><button id="reset">Neutral pose</button><button id="import">Import experiment</button><input id="file" type="file" accept=".json" hidden></div>
+<section class="motion-panel" aria-label="Motion simulation">
+<h3>Motion simulation</h3>
+<label class="toggle"><input id="animate" type="checkbox" checked>Move through simulated servos</label>
+<div class="row"><button class="primary" id="play">▶ Run</button><button id="pause" disabled>Pause</button><button id="step">Step 20 ms</button></div>
+<div class="telemetry"><span>Time <b id="time">0.00 s</b></span><span>Tracking <b id="tracking">0.00°</b></span><span>Peak torque <b id="torque">0.00 Nm</b></span></div>
+<button id="resetMotion">Reset episode</button>
+<details><summary>Servo parameters</summary><p class="note">Independent joint approximation. These defaults are not calibrated to Microduck. Changing parameters starts a new episode at the current pose.</p>
+<div class="triple"><label>Inertia (kg m²)<input id="inertia" type="number" min=".0001" max=".1" step=".001" value=".002"></label><label>Kp (Nm/rad)<input id="kp" type="number" min=".01" max="10" step=".1" value="1"></label><label>Kd (Nm s/rad)<input id="kd" type="number" min="0" max="2" step=".01" value=".04"></label></div>
+<div class="row"><label>Damping (Nm s/rad)<input id="damping" type="number" min=".001" max="2" step=".01" value=".05"></label><label>Torque cap (Nm)<input id="maxTorque" type="number" min=".01" max="5" step=".05" value=".75"></label></div>
+<button id="configureMotion">Apply servo parameters</button></details>
+</section>
+<details><summary>Joint targets</summary><p class="note">Sliders set target angles. The readout shows measured angles during motion. Uncheck simulated servos for instant pose editing.</p><div id="joints"></div></details>
+<section class="motion-panel"><h3>Ground contact &amp; stepping</h3>
+<p class="note">Reduced-order Microduck experiment: gravity, compliant foot contacts and friction-limited body translation. Body orientation stays upright by constraint. Joint/contact models run separately; this is not free-balance validation or route following.</p>
+<div class="row"><button id="startStepping">Run four steps</button><button id="stopStepping" disabled>Stop</button></div>
+<div class="row"><button id="exitStepping" disabled>Return to joint lab</button><button id="exportStepping" disabled>Export stepping</button></div>
+<p id="stepping-status">Starts from a crouched stance. Foot patches show the approximate support area.</p>
+</section>
+<h3>Inverse kinematics</h3><label for="effector">End effector</label><select id="effector"></select>
+<div class="triple"><label>X (m)<input id="tx" type="number" step="0.005"></label><label>Y (m)<input id="ty" type="number" step="0.005"></label><label>Z (m)<input id="tz" type="number" step="0.005"></label></div>
+<button class="primary" id="solve">Solve IK target</button><p id="status" role="status">Compiling the robot’s Modelica equations…</p>
+<details><summary>Reaching benchmark &amp; recordings</summary>
+<p class="note">Run a repeatable, fixed-base reaching episode using an IK target-hold controller. This is a baseline for training experiments, not a learned walking policy. Starts at the neutral pose.</p>
+<label>Seed<input id="seed" type="number" min="0" max="4294967295" step="1" value="42"></label>
+<div class="row"><button id="benchmark">Run seeded reach</button><button id="rollout" disabled>Export rollout</button></div>
+<button id="recording" disabled>Export motion recording</button><p id="recording-status">No motion recorded yet.</p>
+</details>
+<h3>Sensor mount</h3><label for="mount">Attach to frame</label><select id="mount"></select><label for="sensor">Sensor</label><select id="sensor"><option value="depth">Depth · 48 × 32 rays</option><option value="lidar">LiDAR · 128 rays</option></select>
+<div class="triple"><label>Offset X<input id="sx" type="number" step=".005" value="0"></label><label>Offset Y<input id="sy" type="number" step=".005" value="0"></label><label>Offset Z<input id="sz" type="number" step=".005" value="0"></label></div>
+<div class="triple"><label>Roll °<input id="sr" type="number" value="0"></label><label>Pitch °<input id="sp" type="number" value="0"></label><label>Yaw °<input id="sw" type="number" value="0"></label></div>
+<label class="toggle"><input id="liveSensor" type="checkbox">Capture at 5 Hz simulation time while running</label>
+<button id="capture">Capture sensor</button><canvas id="sensor-view" width="288" height="192" aria-label="Ideal sensor range image"></canvas><p id="sensor-status">Attach a sensor, then capture its range observations.</p>
+<details open><summary>Mapping &amp; route planning</summary>
+<p class="note">Horizontal LiDAR mapping with truth or estimated poses. Local odometry has no loop closure. This scan-height slice is not full-body collision checking. Routes are previews; the robot does not walk them.</p>
+<label for="poseMode">Mapping pose source</label><select id="poseMode"><option value="truth">Rumoca ground truth</option><option value="estimated">LiDAR odometry (first pose anchored)</option></select>
+<button id="sweep">Run Rumoca sensor sweep</button><p id="tracking-status">Sweep moves a virtual sensor rig, not the robot. Estimated pose is shown in pink; truth in cyan.</p>
+<button id="mapSensor">Set level mapping LiDAR</button>
+<label class="toggle"><input id="mapEnabled" type="checkbox" checked>Accumulate LiDAR captures</label>
+<canvas id="map-view" width="300" height="300" aria-label="Occupancy map: black occupied, light free, gray unknown; orange planned route"></canvas>
+<p id="map-status">Capture a level LiDAR scan to start mapping.</p>
+<div class="row"><label>Start X (m)<input id="routeSX" type="number" step=".05" value="0"></label><label>Start Y (m)<input id="routeSY" type="number" step=".05" value="0"></label></div>
+<div class="row"><label>Goal X (m)<input id="routeGX" type="number" step=".05" value="-.5"></label><label>Goal Y (m)<input id="routeGY" type="number" step=".05" value="0"></label></div>
+<label>Footprint radius (m)<input id="routeRadius" type="number" min="0" max=".5" step=".01" value=".1"></label>
+<div class="row"><button id="planRoute">Plan route</button><button id="clearMap">Clear map</button><button id="exportMap">Export map</button></div>
+</details><div class="row"><button id="export">Export experiment</button><button id="model">Download Modelica</button></div>
+<p class="note">The joint lab has a fixed base. Stepping adds simplified contact physics with an upright constraint. No free-body balance, route execution, or complete SLAM backend.</p>
+</aside><main id="viewport"><div class="legend"><b id="legend-name">Microduck · motion prototype</b><span>Drag to orbit · scroll to zoom · gold = IK target · cyan = sensor returns</span></div></main>
+</div><script type="module" src="/src/robotics/lab.ts"></script></body></html>
